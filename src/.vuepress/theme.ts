@@ -4,7 +4,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "#",
+  hostname: "https://shasika.github.io/doc-viewer",
 
   author: {
     name: "Mr.Shasika",
