@@ -4,14 +4,14 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "#",
 
   author: {
     name: "Mr.Shasika",
     url: "#",
   },
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "https://i.ibb.co/6hGyCHS/Master-of-ICT-no-bg.png",
 
   repo: "Shasika/doc-viewer",
 
