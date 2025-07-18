@@ -13,7 +13,7 @@ export default hopeTheme({
 
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "Shasika/doc-viewer",
 
   docsDir: "src",
 
@@ -143,7 +143,7 @@ export default hopeTheme({
     // You MUST generate and use your own comment service in production.
     comment: {
       provider: "Giscus",
-      repo: "Shasika/doc-viewe",
+      repo: "Shasika/doc-viewer",
       repoId: "R_kgDOPO1jVA",
       category: "Announcements",
       categoryId: "DIC_kwDOPO1jVM4CtJLg",
