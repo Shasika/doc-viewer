@@ -1,27 +1,28 @@
 ---
 title: Conventional Commits
+icon: mdi:git
 ---
-# Conventional Commits: Complete Developer Guide
 
-## Overview
+# ✅ Conventional Commits: Complete Developer Guide
 
-Conventional Commits is a lightweight convention on commit message formatting that enables automated
-versioning, changelogs, and improved team collaboration. It is especially useful when working in projects
-that follow Semantic Versioning (SemVer).
+**Conventional Commits** is a lightweight commit message convention that standardizes how commit messages are written across teams and projects. It is especially useful for automating versioning (using SemVer), generating changelogs, and streamlining collaboration.
 
-**Official Specification**: [https://www.conventionalcommits.org/en/v1.0.0](https://www.conventionalcommits.org/en/v1.0.0)
+📘 Official Spec: [conventionalcommits.org](https://www.conventionalcommits.org/en/v1.0.0)
 
-## Why Use Conventional Commits?
+---
 
-- Automate changelogs and releases
-- Improve commit readability and traceability
-- Enable automatic semantic versioning
-- Simplify collaboration across teams
-- Works with tools like `semantic-release`, `standard-version`, `commitlint`
+## 🚀 Why Use Conventional Commits?
 
-## Format Structure
+- 📦 Automate changelog generation
+- 🔢 Enable semantic versioning (SemVer)
+- 👥 Improve readability and traceability of commit history
+- ⚙️ Integrate with tools like `commitlint`, `semantic-release`, `standard-version`, and `Husky`
 
-```
+---
+
+## 📐 Basic Commit Message Format
+
+```text
 <type>[optional scope][!]: <description>
 
 [optional body]
@@ -29,107 +30,172 @@ that follow Semantic Versioning (SemVer).
 [optional footer(s)]
 ```
 
-### Header (Required)
+### 🧩 Elements
 
-- `type` : Describes the nature of the change.
-- `scope` : (Optional) Module or context (e.g., component, service).
-- `!` : (Optional) Indicates a breaking change.
-- `description` : Short summary in present tense.
-
-### Body (Optional)
-
-Provides more context about the change. Explains the reasoning or what changed.
-
-### Footer (Optional)
-
-Used for breaking change details or linking to issues.
+| Element      | Required | Description |
+|--------------|----------|-------------|
+| `type`       | ✅        | Type of change (feature, fix, etc.) |
+| `scope`      | 🔁        | A contextual label (e.g., `api`, `auth`) |
+| `!`          | 🔁        | Indicates breaking change |
+| `description`| ✅        | Short summary of change |
+| `body`       | 🔁        | Longer explanation (if needed) |
+| `footer`     | 🔁        | Metadata like `BREAKING CHANGE` or `Closes #123` |
 
 ---
 
-## Types and When to Use Them
+## 🔠 Commit Types & Examples
 
-### 1. feat – Feature
+### 1. `feat` — New Feature
 
-Example: `feat(auth): add OTP-based login support`
-
-### 2. fix – Bug Fix
-
-Example: `fix(payment): resolve duplicate transaction issue`
-
-### 3. docs – Documentation
-
-Example: `docs(readme): add API usage examples`
-
-### 4. style – Formatting
-
-Example: `style(ui): format sidebar component with Prettier`
-
-### 5. refactor – Code Refactoring
-
-Example: `refactor(user): extract auth logic into separate service`
-
-### 6. perf – Performance Improvements
-
-Example: `perf(image): optimize loading of homepage banner`
-
-### 7. test – Tests
-
-Example: `test(api): add unit tests for quote endpoint`
-
-### 8. chore – Maintenance/Meta Tasks
-
-Example: `chore(env): update .env.example file`
-
-### 9. build – Build System
-
-Example: `build(deps): upgrade Laravel to 11.x`
-
-### 10. ci – Continuous Integration
-
-Example: `ci(github): add test matrix for multiple PHP versions`
-
-### 11. BREAKING CHANGE – Breaking Changes
-
-Header: `feat!: drop support for legacy API authentication`
-
-Footer:
+```text
+feat(auth): add OTP-based login support
 ```
+
+Adds a new user-facing feature.
+
+---
+
+### 2. `fix` — Bug Fix
+
+```text
+fix(payment): resolve duplicate transaction issue
+```
+
+Corrects a bug without introducing new features.
+
+---
+
+### 3. `docs` — Documentation Changes
+
+```text
+docs(readme): add API usage examples
+```
+
+For updates to `.md` files, inline comments, or changelogs.
+
+---
+
+### 4. `style` — Code Style Changes (No Logic Impact)
+
+```text
+style(ui): format sidebar component with Prettier
+```
+
+Changes code formatting without affecting behavior.
+
+---
+
+### 5. `refactor` — Code Refactoring
+
+```text
+refactor(user): extract auth logic into separate service
+```
+
+Improves code structure without changing external behavior.
+
+---
+
+### 6. `perf` — Performance Improvements
+
+```text
+perf(image): optimize loading of homepage banner
+```
+
+Boosts performance or efficiency.
+
+---
+
+### 7. `test` — Test-Related Changes
+
+```text
+test(api): add unit tests for quote endpoint
+```
+
+Adds or updates test files (unit, integration, e2e).
+
+---
+
+### 8. `chore` — Miscellaneous Maintenance
+
+```text
+chore(env): update .env.example file
+```
+
+Doesn't modify src or test code — like updating configs, linters, CI files.
+
+---
+
+### 9. `build` — Build System Updates
+
+```text
+build(deps): upgrade Laravel to 11.x
+```
+
+Changes that affect build tools, dependencies, or bundlers.
+
+---
+
+### 10. `ci` — Continuous Integration
+
+```text
+ci(github): add test matrix for multiple PHP versions
+```
+
+Updates to CI/CD config files like GitHub Actions or CircleCI.
+
+---
+
+### 11. `BREAKING CHANGE` — Introduces Breaking Change
+
+```text
+feat!: drop support for legacy API authentication
+
 BREAKING CHANGE: login endpoint now requires multi-factor authentication.
 ```
 
----
-
-## Real-World Examples
-
-- `feat(manual-renewal): add support for marketing preference keys`
-- `fix(api): add missing catch point keys to request`
-- `chore(manual-renewal): update content keys for sidebar`
-- `docs(changelog): update unreleased section with manual-renewal feature`
+Either use `!` after the `type` or include a `BREAKING CHANGE:` footer.
 
 ---
 
-## Best Practices
+## 🧠 Best Practices
 
-- Use present tense (e.g., add, fix, remove)
-- Use clear descriptions (~70 characters max)
-- Use scopes: `feat(api): ...`
-- Add `BREAKING CHANGE:` in footer or `!` in header for breaking changes
-
----
-
-## Tooling Support
-
-1. **commitlint** – Validates commit messages
-2. **semantic-release** – Automates versions & changelogs
-3. **Husky** – Git hooks for pre-commit linting
+- ✅ Use present tense: "add feature" not "added"
+- 🎯 Keep subject under 72 characters
+- 🧩 Use `scope` to clarify the module/context
+- ❗ Use `!` for breaking changes or `BREAKING CHANGE:` footer
+- 💬 Use bodies to explain "why", not just "what"
 
 ---
 
-## Summary
+## 🔧 Tooling Support
 
-Adopting Conventional Commits:
-- Makes commit history clearer
-- Enables automated releases
-- Helps team collaboration
+| Tool              | Description                            |
+|------------------|----------------------------------------|
+| `commitlint`     | Lint commit messages                    |
+| `semantic-release` | Automate changelog + versioning       |
+| `standard-version` | Versioning without CI integration     |
+| `husky`          | Run hooks (like linting before commit) |
 
-Stick to the format, choose correct type, and keep it clean!
+---
+
+## 🧪 Real-World Commit Examples
+
+```text
+feat(manage-users): add marketing preference keys
+fix(api): add missing catch point to payload
+chore(deps): update dependency versions
+docs(changelog): document changes for v2.3.1
+```
+
+---
+
+## 📚 References
+
+- [Conventional Commits Specification](https://www.conventionalcommits.org/)
+- [Semantic Versioning](https://semver.org/)
+- [Commitlint Config](https://commitlint.js.org/)
+- [semantic-release Docs](https://semantic-release.gitbook.io/semantic-release/)
+
+---
+
+> 🧑‍💻 _“Conventional commits make your history readable, your releases automated, and your team aligned.”_
